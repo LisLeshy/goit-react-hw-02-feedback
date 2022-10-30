@@ -1,9 +1,10 @@
 
 import React, { Component } from "react";
-import { FeedbackOptions } from "./FeedbackOptions";
-import { Statistics } from "./Statistics";
-import { Section } from "./Section"; 
-import { Notification } from "./Notification";
+import { FeedbackOptions } from "../FeedbackOptions/FeedbackOptions";
+import { Statistics } from "../Statistics/Statistics";
+import { Section } from "../Section"; 
+import { Notification } from "../Notification";
+import css from './WidgetFeedback.module.css'
 
 class WidgetFeedback extends Component {
     constructor() {
@@ -39,7 +40,7 @@ class WidgetFeedback extends Component {
     {
       const total = this.countTotalFeedback();
       console.log(total);
-        return <>
+        return <> <div className={css.widgetFeedbackContainer} >
           <Section title="Please leave feedback">
              <FeedbackOptions
               options={Object.keys(this.state)}
@@ -58,7 +59,7 @@ class WidgetFeedback extends Component {
               />
               
             </Section>)}
-          
+          </div>
         </>
     }
 }
